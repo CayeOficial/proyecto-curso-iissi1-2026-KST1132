@@ -47,16 +47,13 @@ Por otro lado, se exige una forma en la que los propios trabajadores, de forma i
 
 ### 3.2. Usuarios del sistema
 
-El cliente, al corresponder a una empresa privada, exige un software cuyo uso, del mismo modo, sea privado de forma que solo puedan tener acceso al software solo aquellos usuarios que hayan recibido un usuario y una contraseña concreta para poder acceder a esta (trabajadores/miembros de la empresa). Por ende, los usuarios que harán uso de la aplicación se clasifican en:
+El cliente, al corresponder a una empresa privada, exige un software cuyo uso sea privado de forma que solo puedan tener acceso al software solo aquellos usuarios que hayan sido registrados previamente, y recibido un usuario y una contraseña concreta para poder acceder a esta (trabajadores / miembros de la empresa). Por ende, los usuarios que harán uso de la aplicación se clasifican en:
 
-- Administrador: rol otorgado a los jefes y personal de oficina los cuales tendran acceso a toda la información y permisos del sistema, de forma que dicho personal de ofinica pueda desempeñar sus labores almacenando y comprobando todos los partes de trabajo del día correspondiente.
+- Administrador: rol otorgado a los jefes y personal de oficina los cuales tendrán acceso a toda la información y permisos del sistema, de forma que dicho personal de oficina pueda desempeñar sus labores almacenando y comprobando todos los partes de trabajo del día correspondiente.
 
-- Encargado: Personal reducido de la empresa el cual tiene un papel fundamental en un determinado proyecto. Cada encargado tiene asociada un protecto concreto y desempeñará labores relacionadas al control de la situación en la obra y asegurarse del correcto desempeño  de las labores por parte de los trabajadores. Asimismo, atender contratiempos o incidentes que puedan suceder en el proceso de las mismas.
+- Encargado: personal reducido de la empresa el cual tiene un papel fundamental en un determinado proyecto. Cada encargado tiene asociado un protecto concreto y desempeñará labores relacionadas al control de la situación en la obra y asegurarse del correcto desempeño de las labores por parte de los trabajadores. Asimismo, atender contratiempos o incidentes que puedan suceder en el proceso de las mismas.
 
-
-- Trabajor:Menor cargo asociado a la empresa al cual pertenecen la mayoría de miembros de esta. Cada uno de estos se encarga de una determinada especialidad en la obra
-
-
+- Trabajador: menor cargo asociado a la empresa al cual pertenecen la mayoría de miembros de esta. Cada uno de estos se encarga de una determinada especialidad en la obra y pueden estar organizados en grupos de modo que cada equipo contará con un líder que asimismo, será otro trabajador el cual responderá ante cualquier suceso relacionado con el mismo. Estos trabajadores serán los que tendrán asociado unos determinados detalles de parte ya mencionados en el glosario de términos.
 
 ## 4. Catálogo de requisitos
 
