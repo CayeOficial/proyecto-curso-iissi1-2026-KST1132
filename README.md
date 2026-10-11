@@ -32,13 +32,31 @@ Por otro lado, se exige una forma en la que los propios trabajadores, de forma i
 
 ## 2. Glosario de términos
 
-- Términos específicos del dominio del problema, ordenados alfabéticamente. Se valorará la presencia de información multimedia.
+- Detalle de parte: entrada (fila), correspondiente a un trabajador y parte de trabajo concreto, que incluye su registro de jornada (hora de entrada y salida, actividades realizadas, notas del trabajador e incidencias)
+- Incidencia: registro asignado a un detalle de parte que 
+- Tipo de pago: propiedad de un trabajador que indica la forma de percibir su pago mensual. Tipos disponibles:
+    - Por administración: se calcula el total de horas trabajadas a lo largo del mes; y su líquido a percibir a partir de ese dato y un coste por hora que tiene asociado el trabajador.
+    - Por jornada: se calcula el total de días que ha asistido el trabajador a un proyecto, independientemente del tiempo que haya durado su jornada.
+    - Por producción: se calcula a partir de el número de unidades producidas por el trabajador (por ejemplo: m², unidades de obra o pieza, etc.) 
+- Parte de trabajo: registro (tabla) en el sistema que pertenece a un día concreto y un proyecto (obra), el cual consta de uno o varios detalles de parte.
+- Proyecto (obra): registro en el sistema que hace referencia a una construcción en la que la empresa está trabajando.
 
 ## 3. Visión general del sistema
 
 ### 3.1. Requisitos generales
 
 ### 3.2. Usuarios del sistema
+
+El cliente, al corresponder a una empresa privada, exige un software cuyo uso, del mismo modo, sea privado de forma que solo puedan tener acceso al software solo aquellos usuarios que hayan recibido un usuario y una contraseña concreta para poder acceder a esta (trabajadores/miembros de la empresa). Por ende, los usuarios que harán uso de la aplicación se clasifican en:
+
+- Administrador: rol otorgado a los jefes y personal de oficina los cuales tendran acceso a toda la información y permisos del sistema, de forma que dicho personal de ofinica pueda desempeñar sus labores almacenando y comprobando todos los partes de trabajo del día correspondiente.
+
+- Encargado: Personal reducido de la empresa el cual tiene un papel fundamental en un determinado proyecto. Cada encargado tiene asociada un protecto concreto y desempeñará labores relacionadas al control de la situación en la obra y asegurarse del correcto desempeño  de las labores por parte de los trabajadores. Asimismo, atender contratiempos o incidentes que puedan suceder en el proceso de las mismas.
+
+
+- Trabajor:Menor cargo asociado a la empresa al cual pertenecen la mayoría de miembros de esta. Cada uno de estos se encarga de una determinada especialidad en la obra
+
+
 
 ## 4. Catálogo de requisitos
 
@@ -76,6 +94,8 @@ para [razón]
 Descripción de la regla de negocio.
 
 ### 4.2. Mapa de historias de usuario (opcional)
+
+[Link](https://github.com/users/CayeOficial/projects/2/views/1)
 
 ### 4.3. Requisitos no funcionales (opcional)
 
