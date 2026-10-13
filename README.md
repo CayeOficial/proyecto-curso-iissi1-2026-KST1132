@@ -96,10 +96,17 @@ Descripción de la regla de negocio.
 
 ### 4.3. Requisitos no funcionales (opcional)
 
-**R.N.F. 01. Título requisito no funcional**
-Como [tipo de usuario]
-quiero [servicio]
-para [razón]
+**R.N.F. 01. Disponibilidad y 100% de tiempo de actividad**
+Como dueño del sistema quiero que el sistema esté disponible durante las 24h del día, todos los días para el correcto funcionamiento de la administración.
+
+**R.N.F. 02. Persistencia de datos**
+Se debe garantizar que los datos están disponibles durante al menos 4 años, independientemente de si el trabajador asociado a dichos datos sigue trabajando en la empresa.
+
+**R.N.F. 03. Escalabilidad**
+La base de datos y los demás servicios consultados deben estar preparados para escalarse horizontalmente en el caso de requerir una arquitectura con más espacio de almacenamiento.
+
+**R.N.F. 04. Seguridad**
+Como en el sistema se guardan datos sensibles (DNI, número de Seguridad Social), se debe garantizar que los datos están cifrados y protegidos ante ciberataques, así como que ningún personal ajeno a la empresa pueda acceder a ellos.
 
 -- fin entregable 1 --
 
