@@ -138,7 +138,7 @@ Como encargado de la oficina quiero poder, una vez aplicados los filtros que me 
 
 #### 4.1.1. Requisitos de información
 
-##### R.I.01. Título requisito de información
+##### R.I.01. Creación de usuarios
 
 Como Administrador quiero que se pueda crear usuarios en el sistema de un tipo determinado (Administrador, Encargado o Trabajador) para dar acceso al sistema a el personal de la empresa. Estos deben contener el nombre completo, un email y una contraseña; y el DNI. Asimismo, el Trabajador debe tener atributos adicionales: número de seguridad social y especialidad. Los Encargados deben tener además almacenado su teléfono corporativo. El Personal de Oficina no tiene ningún atributo propio.
 
