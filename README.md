@@ -86,9 +86,20 @@ para [razón]
 
 #### 4.1.2. Reglas de negocio
 
-##### R.N.01. Título regla negocio
+##### R.N.01. Turnos de trabajo
+Cada trabajador tiene asignado un turno (Mañana 7:00 - 15:00 o Tarde 17:00 - 22:00) y no puede registrar una hora de llegada anterior a la del inicio del turno, pero sí posterior a la de fin de turno.
 
-Descripción de la regla de negocio.
+##### R.N.02. Modificación de los datos
+La hora de entrada y salida no puede ser modificada ni por el encargado ni por el trabajador. En caso de error, se debe avisar al encargado para que contacte con el personal de oficina quienes sí pueden modificar estos campos.
+
+##### R.N.03. Ubicación a la hora de registrar la jornada
+Los trabajadores deben activar la ubicación de su dispositivo a la hora de registrar su jornada, si se encuentran en un rango de 250 metros respecto a la ubicación del proyecto, pueden continuar con la acción; en caso contrario no.
+
+##### R.N.04. Jornadas diarias por trabajador
+Los trabajadores solo pueden registrar una jornada en un día concreto. No pueden estar en dos proyectos distintos en el mismo día.
+
+##### R.N.05. Registro de actividades
+Los encargados deben rellenar el atributo "actividades" solo de aquellos usuarios que tienen pago **Por Producción** y de ningún otro.
 
 ### 4.2. Mapa de historias de usuario (opcional)
 
