@@ -1,4 +1,4 @@
-# Título Proyecto
+# Sistema de gestión de Jornada Laboral para empresa de sector de la Construcción
 
 ## Miembros del grupo L2 - GRUPO 3
 
