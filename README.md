@@ -59,17 +59,82 @@ El cliente, al corresponder a una empresa privada, exige un software cuyo uso se
 
 ### 4.1. Requisitos funcionales
 
-#### R.F.01. Título requisito funcional
+#### R.F.01. Acceso al listado de partes de trabajo 
 
-Como [tipo de usuario]
-quiero [servicio]
-para [razón]
+Como Encargado, quiero poder acceder a los partes de trabajo asociados al proyecto del cual soy Encargado.
 
 **Prueba de aceptación**
-- Descripción de la primera comprobación a realizar
-- Descripción de la segunda comprobación a realizar
-- Se debe aplicar la regla de negocio R.N.XX.
-- ...
+
+- Si selecciono un parte de un proyecto del que soy Encargado, puedo ver en tiempo real los datos que van añadiendo los Trabajadores.
+- En el apartado de partes, no deben aparecer aquellos cuyo proyecto no soy Encargado. Aún así, si intento acceder a uno al cual no tengo permiso, el sistema debe impedirmelo y devolverme un error.
+
+
+#### R.F.02. Vista de los partes con filtros
+
+Como Personal de Oficina/Administrador quiero que los partes de trabajo se puedan ver de manera unificada con tres filtros (por proyecto, por Trabajador y por fecha) con el objetivo de en caso de tener que presentar dicha información ante una inspección o tener que calcular la nómina de los Trabajadores pueda hacerlo de forma rápida y efectiva. Además, en el caso de filtrar solo por un Trabajador, quiero poder acceder a todos los detalles de parte asociados a ese Trabajador en los distintos proyectos en los que haya participado específicamente del mes en el que nos encontramos.
+
+**Prueba de aceptación**
+- Si en el apartado de partes almacenados, filtro por el nombre de un Trabajador concreto obtengo únicamente sus registros asociados a dicho mes en cualquier proyecto.
+- Si aplico un filtro incorrecto (un mes del que no hay datos o posterior al actual), obtengo un mensaje que indique la inexistencia de registros asociados a dicho filtro.
+
+
+#### R.F.03. Registro de entrada y salida
+
+Como Trabajador quiero poder registrar mi hora de entrada y de salida (detalle de parte) para justificar mi asistencia y tiempo de trabajo, en el parte correspondiente.
+
+**Prueba de aceptación**
+- Si al intentar firmar me encuentro en la ubicación de la obra, entonces el sistema me lo permite.
+- Si al intentar firmar no me encuentro en la ubicación de la obra, el sistema no me permite registrarme.
+- Se debe aplicar la regla de negocio R.N.01
+- Se debe aplicar la regla de negocio R.N.02
+- Se debe aplicar la regla de negocio R.N.03
+- Se debe aplicar la regla de negocio R.N.04
+
+
+#### R.F.04. Anotaciones en el parte
+
+Como Trabajador quiero poder, opcionalmente, añadir anotaciones en el detalle de parte para añadir cualquier comentario y que pueda ser visto por el Personal de Oficina o el Encargado.
+
+**Prueba de aceptación**
+- Si pongo algún texto en el apartado de anotaciones lo deben de poder ver el Personal de Oficina y el Encargado.
+- Si no pongo nada en el apartado de anotaciones, el Personal de Oficina y el Encargado verán el campo vacío.
+
+#### R.F.05. Asignación de tareas realizadas
+
+Como Encargado, quiero poder asignarle únicamente a aquellos Trabajadores cuyo tipo de pago sea **Por Producción**, cual ha sido su tarea desempañada a lo largo de la jornada.
+
+**Prueba de aceptación**
+- Si el tipo de pago de un trabajador es **Por Producción** debo de poder asignarle cual ha sido su tarea desempeñada a lo largo de la jornada.
+- Si el tipo de pago de un trabajador no es **Por Producción** no me debe salir la opción de asignarles la tarea desempeñada.
+- Se debe aplicar la regla de negocio R.N.05
+
+
+#### R.F.06. Creación de incidencias
+
+Como Encargado quiero poder, opcionalmente, crear incidencias asociadas a un parte para llevar un registro de los eventos inesperados que afectan al normal desarrollo del proyecto, y, opcionalmente, poder asociarlas a uno o varios Trabajadores.
+
+**Prueba de aceptación**
+- Si creo una incidencia, el Personal de Oficina debe poder ver la incidencia y los Trabajadores asociados a ella (si los hubiera).
+- Si creo una incidencia, debe no ser visible para otro tipo de personal ajeno al especificado anteriormente.
+- Se debe aplicar la regla de negocio R.N.06
+
+#### R.F.07. Modificación de partes
+
+Como Administrador quiero poder modificar cualquier parte, tanto de días anteriores como los del día actual, para corregir errores si los hubiera.
+
+**Prueba de aceptación**
+- Si en el apartado de partes almacenados entro en un parte, debo tener una opción de poder editar la información del mismo.
+- Si no soy Administrador, no debo de tener permisos para acceder a la sección de partes almacenados.
+- Se debe aplicar la regla de negocio R.N.02
+
+#### R.F.08. Exportación de datos a formato de datos estandar HOJA DE CÁLCULO
+
+Como encargado de la oficina quiero poder, una vez aplicados los filtros que me interesen, cuente con un botón el cual me permita poder exportar dicha información a formato hoja de cálculo permitiendome de forma efectiva realizar cálculos asociados a los trabajadores.
+
+**Prueba de aceptación**
+- Si soy administrador, en la sección de partes almacenados debo tener una opción para exportar los datos seleccionado como hoja de cálculo.
+- Si no soy administrador no debo tener permisos para acceder a la sección de partes almacenados y por tanto no puedo exportarlos.
+
 
 #### 4.1.1. Requisitos de información
 
