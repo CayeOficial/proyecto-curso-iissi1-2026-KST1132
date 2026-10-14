@@ -33,7 +33,7 @@ Por otro lado, se exige una forma en la que los propios Trabajadores, de forma i
 ## 2. Glosario de términos
 
 - Detalle de parte: entrada (fila), correspondiente a un Trabajador y parte de trabajo concreto, que incluye su registro de jornada (hora de entrada y salida, actividades realizadas, notas del Trabajador e incidencias)
-- Incidencia: registro asignado a un detalle de parte que 
+- Incidencia: registro asignado a un detalle de parte que se utiliza para referirse a un suceso importante que afecta al correcto desarrollo de la jornada o proyecto.
 - Tipo de pago: propiedad de un Trabajador que indica la forma de percibir su pago mensual. Tipos disponibles:
     - Por administración: se calcula el total de horas trabajadas a lo largo del mes; y su líquido a percibir a partir de ese dato y un coste por hora que tiene asociado el Trabajador.
     - Por jornada: se calcula el total de días que ha asistido el Trabajador a un proyecto, independientemente del tiempo que haya durado su jornada.
