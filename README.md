@@ -12,7 +12,7 @@ Nuestro cliente corresponde a una empresa la cual se dedica a la construcción, 
 
 Actualmente el cliente lleva a cabo el registro de la jornada laboral manualmente mediante partes de trabajo "a papel", donde el responsable de cada obra escribe a mano las horas de entrada y salida de cada Trabajador para posteriormente enviarlas al responsable que se encuentra en las oficinas de la empresa. En la siguiente imagen observamos la plantilla que se va rellenando diariamente:
 
-![Ejemplo](https://cdn.cayeoficial.com/image&registro-jornada-tiempo-completo-3-3-pdf.png)
+![Ejemplo](images/registro-jornada-tiempo-completo.png)
 
 Sin embargo, en cuanto a este método utilizado, encuentran varios inconvenientes, entre ellos los siguientes:
 
@@ -146,42 +146,113 @@ Como encargado de la oficina quiero poder, una vez aplicados los filtros que me 
 - Si no soy administrador no debo tener permisos para acceder a la sección de partes almacenados y por tanto no puedo exportarlos.
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #### 4.1.1. Requisitos de información
 
 ##### R.I.01. Creación de usuarios
 
 Como Administrador quiero que se pueda crear usuarios en el sistema de un tipo determinado (Administrador, Encargado o Trabajador) para dar acceso al sistema a el personal de la empresa. Estos deben contener el nombre completo, un email y una contraseña; y el DNI. Asimismo, el Trabajador debe tener atributos adicionales: número de seguridad social y especialidad. Los Encargados deben tener además almacenado su teléfono corporativo. El Personal de Oficina no tiene ningún atributo propio.
 
-**Prueba de aceptación**
-- El email, DNI y NSS deben ser único en todo el sistema.
-- El email, DNI, NSS y teléfono corporativo de los Encargados deben ser campos válidos.
-- No puede haber dos Encargados en con el mismo teléfono corporativo.
+
+##### R.I.02. Creación de equipos
+
+Como personal de oficina, necesito que los trabajadores puedan agruparse formando equipos de modo que a la hora de poder asociarles incentivos o el pago asociado a su producción, este pueda ir destinado al propio equipo. Esto también beneficia a lo hora de adjudicarles un vehículo de empresa. Un equipo por ende, cuenta con un conjunto de trabajadores y un vehículo asociado, identificado por su matrícula.
+
+##### R.I.03. Creación de proyectos
+
+Como Administrador, quiero poder crear, gestionar y eliminar proyectos en los que esté trabajando la empresa. Estos proyectos deben tener un nombre, una ubicación y un estado, que puede ser activo, pausado o finalizado. Un proyecto debe tener un Encargado que será el que gestionará el proyecto mientras esté activo, además de uno o varios equipos que serán los que trabajarán en el proyecto. Además, un proyecto tiene asociado un parte por cada día que el proyecto haya estado activo.
+
+
+##### R.I.04. Creación de incidencias
+
+Como Encargado, quiero poder crear incidencias en caso de que ocurra algo inesperado que influya con el normal desarrollo del proyecto. El parte tiene una descripción de la incidencia y la hora a la que ocurrió. Las incidencias van relacionadas con el parte del día en el que haya ocurrido la incidencia. Además, si hay algún trabajador involucrado en la incidencia me gustaría poder relacionarlo con la incidencia.
+
+
+##### R.I.05. Creación de partes
+
+Como administrador, necesito que en cada uno de los proyectos con los que cuento, de forma diaria, cuente con un parte de registro diario asociado a cada uno de estas obras. Estos partes, cuentan con una fecha, además, cada uno de estos partes cuentan con un numero de trabajadores asociados los cuales cuentan con sus propios detalles de parte y además, tendran asociados unas incidencias que se registrarán de forma diaria con el fin de tener un control diario de todos mis proyectos. 
+
+
+##### R.I.06. Registro de auditorías
+Como administrador, necesito que el sistema registre de forma automática un historial de auditoría para cada acción realizada sobre los partes de trabajo diarios y sus detalles asociados. Este registro debe activarse cada vez que un parte o un detalle de parte sea creado, modificado o eliminado, con el fin de garantizar la seguridad y trazabilidad de los datos de las obras.
+Cada uno de estos registros cuentan con un identificador de usuario, fecha y hora concreta y tipo de operación.24h
+
+##### R.I.07. Creación de detalles de parte
+Como trabajador, necesito poder registrar los detalles asociados a mí como trabajador de forma que estos se incluyan en el parte. Necesito poder incluir la hora de entrada y salida en el turno de mañana y de igual forma con el turno de tarde. Por otro lado, necesito poder incluir anotaciones para añadir comentarios y por último, los encargados necesitan poder asociarme una actividad en caso de percibir por producción.
+
 
 #### 4.1.2. Reglas de negocio
 
 ##### R.N.01. Turnos de trabajo
 Cada Trabajador tiene asignado un turno (Mañana 7:00 - 15:00 o Tarde 17:00 - 22:00) y no puede registrar una hora de llegada anterior a la del inicio del turno, pero sí posterior a la de fin de turno.
 
+** Prueba de aceptación*
+- Como trabajador, no debo poder registrar una hora de llegada anterior a la de inicio de mi turno.
+- Como trabajador, debo poder registrar una hora de llegada igual o posterior a la de inicio de mi turno.
+
 ##### R.N.02. Modificación de los datos
 La hora de entrada y salida no puede ser modificada ni por el Encargado ni por el Trabajador. En caso de error, se debe avisar al Encargado para que contacte con el Personal de Oficina quienes sí pueden modificar estos campos.
+
+**Prueba de aceptación**
+- Como trabajador, accedo a los detalles de parte asociados a mí pero una vez se inserta la hora de llegada, me salta un error al intentar modificarla.
+- Como administrador del sistema, puedo acceder a un parte concreto y modifico la fecha que ha sido introducida de forma errónea.
 
 ##### R.N.03. Ubicación a la hora de registrar la jornada
 Los Trabajadores deben activar la ubicación de su dispositivo a la hora de registrar su jornada, si se encuentran en un rango de 250 metros respecto a la ubicación del proyecto, pueden continuar con la acción; en caso contrario no.
 
+**Prueba de aceptación**
+- Como trabajador, intento registrar mi hora de llegada estando a unos 300 metro de la zona de la obra, obteniendo un error que me indica la imposibilidad de realizar esta acción.
+- Como trabajador, me encuentro a 100 metro de la obra, pudiendo registrar mi jornada.
+
 ##### R.N.04. Jornadas diarias por Trabajador
 Los Trabajadores solo pueden registrar una jornada en un día concreto. No pueden estar en dos proyectos distintos en el mismo día.
+
+**Prueba de aceptación**
+- Como trabajador, intento registrar una jornada en dos proyectos proyectos distintos en el mismo día, obteniendo un error que me indica la imposibilidad de registrarme en dos proyectos el mismo día.
+- Como trabajador, intento registrar una hora de inicio por primera vez en el día, el sistema me lo permite.
 
 ##### R.N.05. Registro de actividades
 Los Encargados deben rellenar el atributo "actividades" solo de aquellos usuarios que tienen pago **Por Producción** y de ningún otro.
 
+**Prueba de aceptación**
+- Como encargado, accedo a un trabajador cuyo método de pago es por producción y cuento con una casilla para poderle asociar una actividad concreta.
+- Como encargado, accedo a un trabajador cuyo método de pago es por administración y no cuento con ninguna casilla la cual pueda completar con su tarea desarrollada.
+
 ##### R.N.06. Creación de incidencias
 Solo los Encargados deben poder crear incidencias, y siempre relacionadas con el parte del día actual.
+
+**Prueba de aceptación**
+- Como trabajador, no veo en la aplicación nada relacionado con las incidencias.
+- Como encargado, puedo ver en la aplicación la opción de crear una incidencia relacionada con el parte del día actual.
 
 ##### R.N.07. Asignación del Trabajador al proyecto
 Un Trabajador solo puede registrar su jornada en un proyecto si previamente ha sido asignado de manera activa a dicho proyecto por parte del Administrador o Personal de Oficina para la fecha correspondiente.
 
+**Prueba de aceptación**
+- Como trabajador, intento acceder a otro proyecto el cual no me corresponde y recibo un mensaje de error indicando que ese proyecto se me ha sido asignado aún.
+- Como trabajdor, puedo acceder a aquellos proyectos a los que he sido asignado y poder registrar mi jornada.
+
+
 ###### R.N.8. Asignación y exclusividad de Encargados
 Un proyecto solo puede tener un Encargado principal asignado para una fecha dada. Un mismo Encargado no puede gestionar más de un proyecto activo de manera simultánea en la misma jornada laboral.
+
+**Prueba de aceptación**
+- Como encargado, no puedo acceder a más de un proyecto por jornada. 
+- Como encargado, debo ver y gestionar un proyecto por jornada.
 
 ### 4.2. Mapa de historias de usuario (opcional)
 
@@ -202,6 +273,18 @@ La base de datos y los demás servicios consultados deben estar preparados para 
 Como en el sistema se guardan datos sensibles (DNI, número de Seguridad Social), se debe garantizar que los datos están cifrados y protegidos ante ciberataques, así como que ningún personal ajeno a la empresa pueda acceder a ellos.
 
 -- fin entregable 1 --
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## 5. Modelo conceptual
 
