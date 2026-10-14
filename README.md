@@ -45,6 +45,16 @@ Por otro lado, se exige una forma en la que los propios Trabajadores, de forma i
 
 ### 3.1. Requisitos generales
 
+Creación de partes automáticamente: todos los días a las 00:00 se creará un parte de trabajo para cada proyecto. Tendrá asignado los mismos trabajadores del día anterior, y el Encargado puede modificarlo más tarde.
+
+Registro de horas de entrada y salida; y notas: los Trabajadores con su dispositivo deben poder acceder al sistema para colocar la hora en la que inician y terminan la jornada, así como comentarios adicionales que quieran añadir.
+
+Control de incidencias: los Encargados y Personal de Oficina (Administradores) pueden crear y visualizar incidencias asociadas a un parte concreto, así como los trabajadores asociados a dicha incidencia (si los hubiera).
+
+Visualización de partes: el Personal de Oficina debe poder ver de manera centralizada todos los partes, incluyendo el del día actual, mediante una interfaz que incorpore filtros.
+
+Exportación de partes: el Personal de Oficina debe poder exportar los datos de los partes que pueden visualizar a formato de Hoja de Cálculo.
+
 ### 3.2. Usuarios del sistema
 
 El cliente, al corresponder a una empresa privada, exige un software cuyo uso sea privado de forma que solo puedan tener acceso al software solo aquellos usuarios que hayan sido registrados previamente, y recibido un usuario y una contraseña concreta para poder acceder a esta (Trabajadores / miembros de la empresa). Por ende, los usuarios que harán uso de la aplicación se clasifican en:
