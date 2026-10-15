@@ -192,10 +192,10 @@ Como Administrador, necesito que para cada uno de los **Proyectos** con los que 
 
 
 ##### R.I.06. Registro de auditorías
-Como Administrador, necesito que el sistema registre de forma automática un historial de auditoría para cada acción realizada sobre los partes de trabajo diarios y sus detalles asociados. Este registro debe activarse cada vez que un **Parte de trabajo** o un **Detalle de parte** sea creado, modificado o eliminado, con el fin de garantizar la seguridad y trazabilidad de los datos de las obras.Cada uno de estos registros cuenta con un identificador de usuario, fecha y hora concreta y tipo de operación.
+Como Administrador, necesito que el sistema registre de forma automática un historial de auditoría para cada acción realizada sobre los partes de trabajo diarios y sus detalles asociados. Este registro debe activarse cada vez que un **Parte de trabajo** o un **Detalle de parte** sea creado, modificado o eliminado, con el fin de garantizar la seguridad y trazabilidad de los datos de las obras. Cada uno de estos registros cuenta con un identificador de usuario, fecha y hora concreta y tipo de operación.
 
 ##### R.I.07. Creación de detalles de parte
-Como Trabajador, necesito poder registrar los detalles asociados a mí como Trabajador de forma que estos se incluyan en el parte. Necesito poder incluir la hora de entrada y salida en el turno de mañana y de igual forma con el turno de tarde. Por otro lado, necesito poder incluir anotaciones para añadir comentarios y por último, los Encargados necesitan poder asociarme una actividad en caso de que el **Tipo de pago*** sea **Por producción**.
+Como Trabajador, necesito poder registrar los detalles asociados a mí como Trabajador de forma que estos se incluyan en el parte. Necesito poder incluir la hora de entrada y salida en el turno de mañana y de igual forma con el turno de tarde. Por otro lado, necesito poder incluir anotaciones para añadir comentarios y por último, los Encargados necesitan poder asociarme una actividad en caso de que el **Tipo de pago** sea **Por producción**.
 
 
 #### 4.1.2. Reglas de negocio
@@ -203,7 +203,7 @@ Como Trabajador, necesito poder registrar los detalles asociados a mí como Trab
 ##### R.N.01. Turnos de trabajo
 Cada Trabajador tiene asignado un turno (Mañana 7:00 - 15:00 o Tarde 17:00 - 22:00) y no puede registrar una hora de llegada anterior a la del inicio del turno, pero sí posterior a la de fin de turno.
 
-** Prueba de aceptación*
+**Prueba de aceptación**
 - Como Trabajador, no debo poder registrar una hora de llegada anterior a la de inicio de mi turno.
 - Como Trabajador, debo poder registrar una hora de llegada igual o posterior a la de inicio de mi turno.
 
@@ -250,7 +250,7 @@ Un Trabajador solo puede registrar su jornada en un **Proyecto** si previamente 
 - Como trabajador, puedo acceder a aquellos **Proyectos** a los que he sido asignado y poder registrar mi jornada.
 
 
-###### R.N.8. Asignación y exclusividad de Encargados
+##### R.N.8. Asignación y exclusividad de Encargados
 Un **Proyecto** solo puede tener un Encargado principal asignado para una fecha dada. Un mismo Encargado no puede gestionar más de un **Proyecto** activo de manera simultánea en la misma jornada laboral.
 
 **Prueba de aceptación**
