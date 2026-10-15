@@ -45,15 +45,17 @@ Por otro lado, se exige una forma en la que los propios Trabajadores, de forma i
 
 ### 3.1. Requisitos generales
 
-Creación de partes automáticamente: todos los días a las 00:00 se creará un **Parte de trabajo** para cada **Proyecto**. Tendrá asignado los mismos trabajadores del día anterior, y el Encargado puede modificarlo más tarde.
+#### R.G.01. Gestión de partes
 
-Registro de horas de entrada y salida; y notas: los Trabajadores con su dispositivo deben poder acceder al sistema para colocar la hora en la que inician y terminan la jornada, así como comentarios adicionales que quieran añadir.
+Se deben de crear **Partes de trabajo** para cada **Proyecto** de forma que se pueda tener un control del registro de hora de entrada y salida de los trabajadores, pudiendo ser visualizado por el Personal de oficina y Administradores para realizar todo tipo de operaciones con dichos datos.
 
-Control de **Incidencias**: los Encargados y Personal de Oficina (Administradores) pueden crear y visualizar **Incidencias** asociadas a un **Parte de trabajo** concreto, así como los Trabajadores asociados a dicha **Incidencia** (si los hubiera).
+#### R.G.02. Gestión de Incidencias
 
-Visualización de partes: el Personal de Oficina debe poder ver de manera centralizada todos los **Partes de trabajo**, incluyendo el del día actual, mediante una interfaz que incorpore filtros.
+los Encargados y Personal de Oficina (Administradores) pueden crear y visualizar **Incidencias** asociadas a un **Parte de trabajo** concreto, así como los Trabajadores asociados a dicha **Incidencia** (si los hubiera).
 
-Exportación de partes: el Personal de Oficina debe poder exportar los datos de los **Partes de trabajo** que pueden visualizar a formato de Hoja de Cálculo.
+#### R.G.03. Gestión de Grupos
+
+El sistema gestionará grupos formados por los Trabajadores del proyecto, de modo que puedan encontrarse organizados por vehículo de empresa el cual tienen asociado como grupo y puedan ser manipulados como un único conjunto en caso de ser necesario.
 
 ### 3.2. Usuarios del sistema
 
@@ -69,18 +71,18 @@ El cliente, al corresponder a una empresa privada, exige un software cuyo uso se
 
 ### 4.1. Requisitos funcionales
 
-#### R.F.01. Acceso al listado de partes de trabajo 
+#### R.F.01. Consulta del listado de partes de trabajo 
 
 Como Encargado, quiero poder acceder a los partes de trabajo asociados al **Proyecto** del cual soy Encargado.
 
-**Prueba de aceptación**
+**Pruebas de aceptación**
 
 - Si selecciono un **Parte de trabajo** de un **Proyecto** del que soy Encargado, puedo ver en tiempo real los datos que van añadiendo los Trabajadores.
 - En el apartado de **Partes de trabajo**, no deben aparecer aquellos cuyo **Proyecto** no soy Encargado. Aun así, si intento acceder a uno al cual no tengo permiso, el sistema debe impedírmelo y devolverme un error.
 - Se debe aplicar la regla de negocio R.N.08
 
 
-#### R.F.02. Vista de los partes de trabajo con filtros
+#### R.F.02. Consulta de los partes de trabajo con filtros
 
 Como Personal de Oficina/Administrador quiero que los **Partes de trabajo** se puedan ver de manera unificada con tres filtros (por **Proyecto**, por Trabajador y por fecha) con el objetivo de que en el  caso de tener que presentar dicha información ante una inspección o tener que calcular la nómina de los Trabajadores pueda hacerlo de forma rápida y efectiva. Además, en el caso de filtrar solo por un Trabajador, quiero poder acceder a todos los **Detalles del parte** asociados a ese Trabajador en los distintos **Proyectos** en los que haya participado en el mes en el que nos encontramos.
 
@@ -89,62 +91,59 @@ Como Personal de Oficina/Administrador quiero que los **Partes de trabajo** se p
 - Si aplico un filtro incorrecto (un mes del que no hay datos o posterior al actual), obtengo un mensaje que indique la inexistencia de registros asociados a dicho filtro.
 
 
-#### R.F.03. Registro de entrada y salida
+#### R.F.03. Consulta del registro de entrada y salida
 
-Como Trabajador quiero poder registrar mi hora de entrada y de salida (**Detalle de parte**) para justificar mi asistencia y tiempo de trabajo, en el **Parte de trabajo** correspondiente.
+Como Trabajador quiero poder consultar mi hora de entrada y de salida (**Detalle de parte**) en el **Parte de trabajo** correspondiente.
 
-**Prueba de aceptación**
-- Si al intentar firmar me encuentro en la ubicación de la obra, entonces el sistema me lo permite.
-- Si al intentar firmar no me encuentro en la ubicación de la obra, el sistema no me permite registrarme.
-- Se debe aplicar la regla de negocio R.N.01
-- Se debe aplicar la regla de negocio R.N.02
+**Pruebas de aceptación**
+- Si intento acceder a un Detalle de parte que anteriormente rellené, tengo acceso.
+- Si intento acceder a un Detalle de parte que no está asociado a mi usuario, el sistema me lo impide.
 - Se debe aplicar la regla de negocio R.N.03
-- Se debe aplicar la regla de negocio R.N.04
 
 
-#### R.F.04. Anotaciones en el parte de trabajo
+#### R.F.04. Consulta de anotaciones en el parte de trabajo
 
-Como Trabajador quiero poder, opcionalmente, añadir anotaciones en el **Detalle de parte** para añadir cualquier comentario y que pueda ser visto por el Personal de Oficina o el Encargado.
+Como Personal de Oficina quiero poder visualizar anotaciones en el **Detalle de parte** añadidas por el Trabajador y que pueda ser visto por el Encargado.
 
-**Prueba de aceptación**
-- Si pongo algún texto en el apartado de anotaciones lo debe de poder ver el Personal de Oficina y el Encargado.
-- Si no pongo nada en el apartado de anotaciones, el Personal de Oficina y el Encargado verán el campo vacío.
+**Pruebas de aceptación**
+- Si existe algún texto en el apartado de anotaciones lo debe de poder ver el Personal de Oficina y el Encargado.
+- Si no existe nada en el apartado de anotaciones, el Personal de Oficina y el Encargado verán el campo vacío.
 
-#### R.F.05. Asignación de tareas realizadas
+#### R.F.05. Consulta de tareas realizadas
 
-Como Encargado, quiero poder asignarle únicamente a aquellos Trabajadores cuyo **Tipo de pago*** sea **Por Producción**, cuál ha sido su tarea desempeñada a lo largo de la jornada.
+Como Personal de Oficina, quiero poder consultar de aquellos Trabajadores cuyo **Tipo de pago** sea **Por Producción**, cuál ha sido su tarea desempeñada a lo largo de la jornada.
 
-**Prueba de aceptación**
-- Si el **Tipo de pago*** de un Trabajador es **Por Producción** debo de poder asignarle cuál ha sido su tarea desempeñada a lo largo de la jornada.
-- Si el **Tipo de pago*** de un Trabajador no es **Por Producción** no me debe salir la opción de asignarles la tarea desempeñada.
+**Pruebas de aceptación**
+- Si el **Tipo de pago** de un Trabajador es **Por Producción** debo de poder ver cuál ha sido su tarea desempeñada a lo largo de la jornada.
+- Si el **Tipo de pago** de un Trabajador no es **Por Producción** no me debe salir la opción de ver la tarea desempeñada.
 - Se debe aplicar la regla de negocio R.N.05
 
 
-#### R.F.06. Creación de incidencias
+#### R.F.06. Consulta de incidencias
 
-Como Encargado quiero poder, opcionalmente, crear **Incidencias** asociadas a un **Parte de trabajo** para llevar un registro de los eventos inesperados que afectan al normal desarrollo del **Proyecto**, y, opcionalmente, poder asociarlas a uno o varios Trabajadores.
+Como Encargado quiero poder, consultar **Incidencias** asociadas a un **Parte de trabajo** para llevar un registro de los eventos inesperados que afectan al normal desarrollo del **Proyecto**, así como los trabajadores asociados (si hay).
 
-**Prueba de aceptación**
+**Pruebas de aceptación**
 - Si creo una **Incidencia**, el Personal de Oficina debe poder ver la **Incidencia** y los Trabajadores asociados a ella (si los hubiera).
 - Si creo una **Incidencia**, debe no ser visible para otro tipo de personal ajeno al especificado anteriormente.
 - Se debe aplicar la regla de negocio R.N.06
 
-#### R.F.07. Modificación de partes
+#### R.F.07. Consulta de partes
 
-Como Administrador quiero poder modificar cualquier **Parte de trabajo**, tanto de días anteriores como los del día actual, para corregir errores si los hubiera.
+Como Administrador quiero poder consultar cualquier **Parte de trabajo**, tanto de días anteriores como los del día actual, para corregir errores si los hubiera.
 
-**Prueba de aceptación**
-- Si en el apartado de **Partes de trabajo** almacenados entro en un **Parte de trabajo**, debo tener una opción de poder editar la información del mismo.
+**Pruebas de aceptación**
+- En el apartado de **Partes de trabajo** debo tener un listado de aquellos cuyo **Proyecto** me encargo.
 - Si no soy Administrador, no debo de tener permisos para acceder a la sección de **Partes de trabajo** almacenados.
 - Se debe aplicar la regla de negocio R.N.02
 
-#### R.F.08. Exportación de datos a formato estándar HOJA DE CÁLCULO
+#### R.F.08. Consulta de grupos y vehículos
 
-Como Encargado de la oficina quiero poder, una vez aplicados los filtros que me interesen, cuente con un botón el cual me permita poder exportar dicha información a formato hoja de cálculo permitiéndome de forma efectiva realizar cálculos asociados a los Trabajadores.
+Como Personal de Oficina quiero poder consultar los grupos de trabajo que los Encargados crean, así como el vehículo que tienen asociado
 
-**Prueba de aceptación**
-- Si soy Administrador, en la sección de **Partes de trabajo** almacenados debo tener una opción para exportar los datos seleccionados como hoja de cálculo.
-- Si no soy Administrador no debo tener permisos para acceder a la sección de **Partes de trabajo** almacenados y por tanto no puedo exportarlos.
+**Pruebas de aceptación**
+- Si soy Administrador, puedo ver los grupos y los vehículos.
+- Si no soy Administrador, no debo tener acceso a esa información.
 
 
 #### R.F.09. Consulta del historial de jornadas del Trabajador
@@ -167,35 +166,36 @@ Como Encargado, quiero poder consultar la información del proyecto que tengo as
 
 #### 4.1.1. Requisitos de información
 
-##### R.I.01. Creación de usuarios
+##### R.I.01. Información de usuarios
 
-Como Administrador quiero que se pueda crear usuarios en el sistema de un tipo determinado (Administrador, Encargado o Trabajador) para dar acceso al sistema a el personal de la empresa. Estos deben contener el nombre completo, un email y una contraseña; y el DNI. Asimismo, el Trabajador debe tener atributos adicionales: número de seguridad social y especialidad. Los Encargados deben tener además almacenado su teléfono corporativo. El Personal de Oficina no tiene ningún atributo propio.
+Como Administrador quiero que existan usuarios en el sistema de un tipo determinado (Administrador, Encargado o Trabajador) para dar acceso al sistema al personal de la empresa. Estos deben contener el nombre completo, un email y una contraseña; y el DNI. Asimismo, el Trabajador debe tener atributos adicionales: número de seguridad social y especialidad. Los Encargados deben tener además almacenado su teléfono corporativo. El Personal de Oficina no tiene ningún atributo propio.
 
 
-##### R.I.02. Creación de equipos
+##### R.I.02. Información de equipos
 
 Como personal de oficina, necesito que los Trabajadores puedan agruparse formando equipos de modo que a la hora de poder asociarles incentivos o el pago asociado a su producción, este pueda ir destinado al propio equipo. Esto también beneficia a lo hora de adjudicarles un vehículo de empresa. Un equipo, por ende, cuenta con un conjunto de Trabajadores y un vehículo asociado, identificado por su matrícula.
 
-##### R.I.03. Creación de proyectos
+##### R.I.03. Información de proyectos
 
-Como Administrador, quiero poder crear, gestionar y eliminar **Proyectos** en los que esté trabajando la empresa. Estos **Proyectos** deben tener un nombre, una ubicación y un estado, que puede ser activo, pausado o finalizado. Un **Proyecto** debe tener un Encargado que será el que gestionará el **Proyecto** mientras esté activo, además de uno o varios equipos que serán los que trabajarán en el **Proyecto**. Además, un **Proyecto** tiene asociado un **Parte de trabajo** por cada día que el **Proyecto** haya estado activo.
-
-
-##### R.I.04. Creación de incidencias
-
-Como Encargado, quiero poder crear **Incidencias** en caso de que ocurra algo inesperado que influya en el normal desarrollo del **Proyecto**. El **Parte de trabajo** tiene una descripción de la **Incidencia** y la hora a la que ocurrió. Las **Incidencias** van relacionadas con el **Parte de trabajo** del día en el que haya ocurrido la **Incidencia**. Además, si hay algún Trabajador involucrado en la **Incidencia** me gustaría poder relacionarlo con la **Incidencia**.
+Como Administrador, quiero que existan **Proyectos** que sean las obras que lleva a cabo la empresa. Estos **Proyectos** deben tener un nombre, una ubicación y un estado, que puede ser activo, pausado o finalizado. Un **Proyecto** debe tener un Encargado que será el que gestionará el **Proyecto** mientras esté activo, además de uno o varios equipos que serán los que trabajarán en el **Proyecto**. Además, un **Proyecto** tiene asociado un **Parte de trabajo** por cada día que el **Proyecto** haya estado activo.
 
 
-##### R.I.05. Creación de partes
+##### R.I.04. Información de incidencias
 
-Como Administrador, necesito que para cada uno de los **Proyectos** con los que cuento, de forma diaria, cuente con un **Parte de trabajo** de registro diario asociado a cada una de estas obras. Estos partes cuentan con una fecha, además, cada uno de estos partes cuenta con un número de Trabajadores asociados los cuales cuentan con sus propios **Detalles de parte** y además, tendrán asociados unas **Incidencias** que se registrarán de forma diaria con el fin de tener un control diario de todos mis **Proyectos**. 
+Como Encargado, quiero que existan **Incidencias** en caso de que ocurra algo inesperado que influya en el normal desarrollo del **Proyecto**. La **Incidencia** tiene una descripción y la hora a la que ocurrió. Las **Incidencias** van relacionadas con el **Parte de trabajo** del día en el que haya ocurrido la **Incidencia**. Además, si hay algún Trabajador involucrado en la **Incidencia** me gustaría poder relacionarlo con la **Incidencia**.
 
 
-##### R.I.06. Registro de auditorías
-Como Administrador, necesito que el sistema registre de forma automática un historial de auditoría para cada acción realizada sobre los partes de trabajo diarios y sus detalles asociados. Este registro debe activarse cada vez que un **Parte de trabajo** o un **Detalle de parte** sea creado, modificado o eliminado, con el fin de garantizar la seguridad y trazabilidad de los datos de las obras. Cada uno de estos registros cuenta con un identificador de usuario, fecha y hora concreta y tipo de operación.
+##### R.I.05. Información de partes
 
-##### R.I.07. Creación de detalles de parte
-Como Trabajador, necesito poder registrar los detalles asociados a mí como Trabajador de forma que estos se incluyan en el parte. Necesito poder incluir la hora de entrada y salida en el turno de mañana y de igual forma con el turno de tarde. Por otro lado, necesito poder incluir anotaciones para añadir comentarios y por último, los Encargados necesitan poder asociarme una actividad en caso de que el **Tipo de pago** sea **Por producción**.
+Como Administrador, necesito que cada uno de los **Proyectos** con los que cuento, de forma diaria, cuente con un **Parte de trabajo** de registro diario asociado a cada una de estas obras. Estos partes cuentan con una fecha, además, cada uno de estos partes cuenta con un número de Trabajadores asociados los cuales cuentan con sus propios **Detalles de parte** y además, tendrán asociados unas **Incidencias** que se registrarán de forma diaria con el fin de tener un control diario de todos mis **Proyectos**. 
+
+
+##### R.I.06. Información de auditorías
+Como Administrador, necesito que exista un historial de auditoría para cada acción realizada sobre los partes de trabajo diarios y sus detalles asociados. Este registro debe activarse cada vez que un **Parte de trabajo** o un **Detalle de parte** sea creado, modificado o eliminado, con el fin de garantizar la seguridad y trazabilidad de los datos de las obras. Cada uno de estos registros cuenta con un identificador de usuario, fecha y hora concreta y tipo de operación.
+
+
+##### R.I.07. Información de detalles de parte
+Como Trabajador, necesito que existan detalles asociados a mí como Trabajador de forma que estos se incluyan en el parte. Necesito poder incluir la hora de entrada y salida en mi turno. Por otro lado, necesito poder incluir anotaciones para añadir comentarios y por último, los Encargados necesitan poder asociarme una actividad en caso de que el **Tipo de pago** sea **Por producción**.
 
 
 #### 4.1.2. Reglas de negocio
